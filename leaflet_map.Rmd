@@ -1,0 +1,20 @@
+---
+title: "Leaflet Map Project"
+author: "Benjamin Amankwah"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+This page was created on `r Sys.Date()`.
+
+```{r leaflet-map, echo=TRUE}
+# Load leaflet library
+library(leaflet)
+
+# Create interactive map with multiple markers
+leaflet() %>%
+  addTiles() %>%
+  addMarkers(lng = -122.4194, lat = 37.7749, popup = "San Francisco") %>%
+  addMarkers(lng = -74.0060, lat = 40.7128, popup = "New York City") %>%
+  addMarkers(lng = -0.1276, lat = 51.5074, popup = "London") %>%
+  addMarkers(lng = 139.6917, lat = 35.6895, popup = "Tokyo")
